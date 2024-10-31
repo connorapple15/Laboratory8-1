@@ -1,21 +1,26 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include <iostream>
-#include <string>
 
-int countCharacter(const string& str);
+int countVowel(const string& str);
 
 int main() {
     string test1 = "Hello, World!";
     string test2 = "Laboratory eight";
 
-    cout << "Number of characters in test1: " << countCharacter(test1) << endl;
-    cout << "Number of characters in test2: " << countCharacter(test2) << endl;
+    cout << "Number of vowels in test1: " << countVowel(test1) << endl;
+    cout << "Number of vowels in test2: " << countVowel(test2) << endl;
 
     return 0;
 }
 
-int countCharacter(const string& str) {
-    return str.length();
+int countVowel(const string& str) {
+    int count = 0;
+    for (char c : str) {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+            c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+            count++;
+        }
+    }
+    return count;
 }
